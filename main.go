@@ -21,6 +21,7 @@ type BlockChain struct {
 
 type Person struct {
 	Name string
+	Age  int
 }
 
 func main() {
@@ -37,18 +38,18 @@ func main() {
 		fmt.Println()
 	}
 
-	person := NewPerson("test")
-	person1 := NewPerson1("test1")
+	person := NewPerson("test", 10)
+	person1 := NewPerson1("test1", 11)
 	fmt.Println("tube", person)
 	fmt.Println("tube1", *person1)
 }
 
-func NewPerson(name string) Person {
-	person := Person{name}
+func NewPerson(name string, age int) Person {
+	person := Person{name, age}
 	return person
 }
-func NewPerson1(name string) *Person {
-	person := &Person{name}
+func NewPerson1(name string, age int) *Person {
+	person := &Person{name, age}
 	return person
 }
 
